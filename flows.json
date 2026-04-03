@@ -1,0 +1,124 @@
+[
+    {
+        "id": "4bbba70cfd2a5322",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "30a759ad81f4323d",
+        "type": "http in",
+        "z": "4bbba70cfd2a5322",
+        "name": "Telemetry",
+        "url": "/api/sensor",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 320,
+        "y": 140,
+        "wires": [
+            [
+                "9da7c70a2bade605",
+                "964bd5dcee476c2b"
+            ]
+        ]
+    },
+    {
+        "id": "9da7c70a2bade605",
+        "type": "http response",
+        "z": "4bbba70cfd2a5322",
+        "name": "Response",
+        "statusCode": "200",
+        "headers": {},
+        "x": 480,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "964bd5dcee476c2b",
+        "type": "debug",
+        "z": "4bbba70cfd2a5322",
+        "name": "Dikumbang",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 410,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "9d6d8dfcf4419916",
+        "type": "http in",
+        "z": "4bbba70cfd2a5322",
+        "name": "Telemetry GET",
+        "url": "/api/sensor",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 320,
+        "y": 300,
+        "wires": [
+            [
+                "8369453256e28843",
+                "ed61693b88c60a3a"
+            ]
+        ]
+    },
+    {
+        "id": "8369453256e28843",
+        "type": "function",
+        "z": "4bbba70cfd2a5322",
+        "name": "Chef Fungsi",
+        "func": "msg.payload ={\n    \"message\": \"Enter Text message.\"\n};\n\nnode.warn(\"GET request received - Sending: Enter Text message.\")\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 340,
+        "wires": [
+            [
+                "9984a5becd56231d"
+            ]
+        ]
+    },
+    {
+        "id": "9984a5becd56231d",
+        "type": "http response",
+        "z": "4bbba70cfd2a5322",
+        "name": "Response GET",
+        "statusCode": "200",
+        "headers": {},
+        "x": 360,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ed61693b88c60a3a",
+        "type": "debug",
+        "z": "4bbba70cfd2a5322",
+        "name": "Nyahkumbang",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 300,
+        "wires": []
+    }
+]
